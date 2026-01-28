@@ -1,0 +1,28 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: homelab-task-go
+  title: Homelab Task Go Runtime
+  description: Go-based task runner for homelab-tasks framework - executes workflows defined in YAML
+  annotations:
+    github.com/project-slug: erauner/homelab-task-go
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: erauner/homelab-task-go/main
+    nexus-repository-manager/docker.image-name: homelab/taskkit-go
+  tags:
+    - go
+    - container
+    - kubernetes
+    - argo-workflows
+    - task-automation
+  links:
+    - url: https://github.com/erauner/homelab-task-go
+      title: GitHub Repository
+      icon: github
+spec:
+  type: library
+  lifecycle: production
+  owner: user:erauner
+  system: homelab-infrastructure
+  dependsOn:
+    - component:homelab-tasks
